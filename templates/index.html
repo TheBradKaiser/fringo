@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <main>
+        <div class="container">
+  <div class="grid">
+        
+  </div>
+</div>
+    </main>
+	<script src="index.js"></script>
+
+
+  <script>
+  for (let i = 0; i <= 49; i++) {
+  $(".grid").append('<div class="cell far" id="'+i+'">'+i+'</div>')
+}
+  $(".cell").mouseover(function(){
+    $(this).siblings().removeClass(["hover","next"])
+    $(this).removeClass(["hover","next"])
+    // console.log($(this).siblings())
+    // $(this).siblings().not($(this)).removeClass()
+    $(this).addClass("hover")
+    //top side logic
+    var top,left,right,bot = true
+    var thisId = $(this).attr('id')
+    if (thisId <=9){
+      top=false
+    }else{
+      $("#"+(thisId-10)).addClass("next")
+    }
+    //bottom side logic
+    
+    if ((thisId)>=40){
+      bot=false
+    }else{
+      console.log( 10+thisId)
+      $("#"+( 10+parseInt(thisId) )).addClass("next")
+    }
+
+    //left side logic
+    if (thisId % 10 == 0){
+      console.log("left side")
+      left=false
+    }else{
+      var prev = $(this).prev().addClass("next")
+    }
+    //right side logic
+    if ((thisId-9)%10==0){
+      right=false
+    }else{
+      var next = $(this).next().addClass("next")
+    }
+    //corner logic will be combos of two.
+    
+    
+    // var top = ""
+    // var bot = ""
+
+    $(this).siblings().not($(this))
+    //i want last and next cells, first
+
+  })
+  </script>
+  </body>
+</html>

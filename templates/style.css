@@ -1,0 +1,48 @@
+.container {
+    background: black;
+    display: inline-block;
+    border: 5px solid black;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(10, 80px);
+    grid-template-rows: repeat(5, 80px);
+    grid-gap: 5px;
+  }
+  .cell {
+     /* center the cell content */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: Arial;
+    font-size: 3rem;
+    font-weight: bold;
+    background: aliceblue;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    padding: 20px;
+  }
+  .cell.hover {
+    background: violet;
+  }
+  .cell.next{
+    background:aqua;
+  }
+  .far{
+    background: aliceblue;
+  }
+
+  /* .clicker { 
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    background: #f5f5f5; 
+    padding: 20px;
+}
+
+.clicker:hover { 
+    background: #eee;
+} */
